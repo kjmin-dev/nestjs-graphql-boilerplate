@@ -20,9 +20,14 @@ Nest-based graphql backend boilerplate for rapid prototyping
 ## Installation
 
 ```bash
-$ pnpm install          # Install dependencies
-$ docker-compose up -d  # Run postgresql container
-$ pnpm prisma db push   # Initialize DB schemas
+# Install dependencies
+$ pnpm install
+
+# Run postgresql container
+$ docker-compose up -d
+
+# Initialize DB schemas
+$ pnpm prisma db push
 ```
 
 ## Running the app
