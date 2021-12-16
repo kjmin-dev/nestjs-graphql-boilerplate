@@ -1,6 +1,6 @@
-import { ArgsType, Field, Int } from '@nestjs/graphql';
+import { Field, Int, ObjectType } from '@nestjs/graphql';
 
-@ArgsType()
+@ObjectType()
 export class GeneralModel {
   @Field(() => Int)
   idx: number;

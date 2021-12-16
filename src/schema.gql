@@ -3,12 +3,25 @@
 # ------------------------------------------------------
 
 type TodoList {
+  idx: Int!
+  id: String!
+  createdAt: Timestamp!
+  updatedAt: Timestamp!
   title: String!
   priority: Int!
   items: [TodoItem!]
 }
 
+"""
+`Date` type as integer. Type represents date and time as number of milliseconds from start of UNIX epoch.
+"""
+scalar Timestamp
+
 type TodoItem {
+  idx: Int!
+  id: String!
+  createdAt: Timestamp!
+  updatedAt: Timestamp!
   description: String!
   isDone: Boolean!
   priority: Int!
