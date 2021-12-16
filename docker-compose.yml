@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+  db:
+    image: postgres:14.1
+    ports:
+      - 5432:5432
+    working_dir: /app
+    volumes:
+      - ./docker/db/:/app
+    environment:
+      TZ: Asia/Seoul
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "mypassword"
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "postgres"]
