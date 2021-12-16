@@ -1,0 +1,21 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type TodoList {
+  title: String!
+  priority: Int!
+  items: [TodoItem!]
+}
+
+type TodoItem {
+  description: String!
+  isDone: Boolean!
+  priority: Int!
+  parentTodo: TodoList
+}
+
+type Query {
+  allTodoLists: [TodoList!]
+  todoList(id: String!): [TodoItem!]
+}

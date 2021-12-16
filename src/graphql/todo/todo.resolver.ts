@@ -1,6 +1,6 @@
 import 'reflect-metadata';
 import { Inject } from '@nestjs/common';
-import { Resolver, ResolveField, Root, Context } from '@nestjs/graphql';
+import { Resolver, ResolveField, Root, Query, Args } from '@nestjs/graphql';
 import { PrismaService } from 'src/services/prisma.service';
 import {
   TodoList,
@@ -25,5 +25,19 @@ export class TodoListResolver {
         },
       })
       .items();
+  }
+
+  @Query((returns) => [TodoList], { nullable: true })
+  async allTodoLists() {
+    return this.prismaService.todoList.findMany();
+  }
+
+  @Query((returns) => [TodoItem], { nullable: true })
+  async todoList(@Args('id') listId: string) {
+    return this.prismaService.todoList.findUnique({
+      where: {
+        id: listId,
+      },
+    });
   }
 }
