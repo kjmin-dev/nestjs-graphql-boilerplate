@@ -2,7 +2,6 @@ import { Module } from '@nestjs/common';
 import { GraphQLModule } from '@nestjs/graphql';
 import { join } from 'path';
 import { PrismaService } from './services/prisma.service';
-import { DateScalar } from './graphql/scalars/DateScalar';
 import { TodoListResolver } from './graphql/todo';
 
 @Module({
@@ -13,6 +12,6 @@ import { TodoListResolver } from './graphql/todo';
     }),
   ],
   controllers: [],
-  providers: [PrismaService, DateScalar, TodoListResolver],
+  providers: [PrismaService, TodoListResolver],
 })
 export class AppModule {}
