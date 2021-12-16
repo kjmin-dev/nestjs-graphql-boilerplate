@@ -17,7 +17,7 @@ model TodoList {
   updatedAt DateTime   @updatedAt
   title     String
   priority  Int        @default(0)
-  TodoItem  TodoItem[]
+  items  TodoItem[]
 }
 
 model TodoItem {
