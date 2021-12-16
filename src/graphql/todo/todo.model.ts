@@ -1,5 +1,11 @@
 import 'reflect-metadata';
-import { ObjectType, Field, Int } from '@nestjs/graphql';
+import {
+  ObjectType,
+  Field,
+  Int,
+  PartialType,
+  InputType,
+} from '@nestjs/graphql';
 import { GeneralModel } from '../generalModel';
 
 @ObjectType()
@@ -28,3 +34,9 @@ export class TodoItem extends GeneralModel {
   @Field((type) => TodoList, { nullable: true })
   parentTodo?: TodoList | null;
 }
+
+@InputType()
+export class TodoListCreateInput extends PartialType(TodoList) {}
+
+@InputType()
+export class TodoItemCreateInput extends PartialType(TodoItem) {}
