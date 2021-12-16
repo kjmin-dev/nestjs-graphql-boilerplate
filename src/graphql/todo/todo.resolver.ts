@@ -1,6 +1,13 @@
 import 'reflect-metadata';
 import { Inject } from '@nestjs/common';
-import { Resolver, ResolveField, Root, Query, Args } from '@nestjs/graphql';
+import {
+  Resolver,
+  ResolveField,
+  Root,
+  Query,
+  Args,
+  Mutation,
+} from '@nestjs/graphql';
 import { PrismaService } from 'src/services/prisma.service';
 import {
   TodoList,
@@ -37,6 +44,35 @@ export class TodoListResolver {
     return this.prismaService.todoList.findUnique({
       where: {
         id: listId,
+      },
+    });
+  }
+
+  @Mutation((returns) => TodoList)
+  async createTodoList(
+    @Args('data') data: TodoListCreateInput,
+  ): Promise<TodoList> {
+    return this.prismaService.todoList.create({
+      data: {
+        title: data.title,
+      },
+    });
+  }
+
+  @Mutation((returns) => TodoItem)
+  async createTodoItem(
+    @Args('data') data: TodoItemCreateInput,
+    @Args('listId') listId: string,
+  ): Promise<TodoItem> {
+    return this.prismaService.todoItem.create({
+      data: {
+        description: data.description,
+        isDone: data.isDone,
+        parentTodo: {
+          connect: {
+            id: listId,
+          },
+        },
       },
     });
   }

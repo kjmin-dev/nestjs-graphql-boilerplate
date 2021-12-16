@@ -19,3 +19,17 @@ type Query {
   allTodoLists: [TodoList!]
   todoList(id: String!): [TodoItem!]
 }
+
+type Mutation {
+  createTodoList(data: TodoListCreateInput!): TodoList!
+  createTodoItem(listId: String!, data: TodoItemCreateInput!): TodoItem!
+}
+
+input TodoListCreateInput {
+  title: String!
+}
+
+input TodoItemCreateInput {
+  description: String!
+  isDone: Boolean!
+}
