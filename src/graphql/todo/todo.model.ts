@@ -8,10 +8,10 @@ export class TodoList extends GeneralModel {
   @Field()
   title: string;
 
-  @Field((type) => Int)
+  @Field(() => Int)
   priority: number;
 
-  @Field((type) => [TodoItem], { nullable: true })
+  @Field(() => [TodoItem], { nullable: true })
   items?: [TodoItem] | null;
 }
 
@@ -24,10 +24,10 @@ export class TodoItem extends GeneralModel {
   @Field()
   isDone: boolean;
 
-  @Field((type) => Int)
+  @Field(() => Int)
   priority: number;
 
-  @Field((type) => TodoList, { nullable: true })
+  @Field(() => TodoList, { nullable: true })
   parentTodo?: TodoList | null;
 }
 

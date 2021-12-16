@@ -34,12 +34,12 @@ export class TodoListResolver {
       .items();
   }
 
-  @Query((returns) => [TodoList], { nullable: true })
+  @Query(() => [TodoList], { nullable: true })
   async allTodoLists() {
     return this.prismaService.todoList.findMany();
   }
 
-  @Query((returns) => [TodoItem], { nullable: true })
+  @Query(() => [TodoItem], { nullable: true })
   async todoList(@Args('id') listId: string) {
     return this.prismaService.todoList.findUnique({
       where: {
@@ -48,7 +48,7 @@ export class TodoListResolver {
     });
   }
 
-  @Mutation((returns) => TodoList)
+  @Mutation(() => TodoList)
   async createTodoList(
     @Args('data') data: TodoListCreateInput,
   ): Promise<TodoList> {
@@ -59,7 +59,7 @@ export class TodoListResolver {
     });
   }
 
-  @Mutation((returns) => TodoItem)
+  @Mutation(() => TodoItem)
   async createTodoItem(
     @Args('data') data: TodoItemCreateInput,
     @Args('listId') listId: string,

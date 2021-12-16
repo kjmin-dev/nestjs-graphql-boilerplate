@@ -2,7 +2,7 @@ import { ArgsType, Field, Int } from '@nestjs/graphql';
 
 @ArgsType()
 export class GeneralModel {
-  @Field((type) => Int)
+  @Field(() => Int)
   idx: number;
 
   @Field()
