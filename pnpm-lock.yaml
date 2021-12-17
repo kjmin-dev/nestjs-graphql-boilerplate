@@ -16,6 +16,7 @@ specifiers:
   '@types/supertest': ^2.0.11
   '@typescript-eslint/eslint-plugin': ^5.0.0
   '@typescript-eslint/parser': ^5.0.0
+  apollo-server-core: ^3.5.0
   apollo-server-fastify: ^3.5.0
   eslint: ^8.0.1
   eslint-config-prettier: ^8.3.0
@@ -38,10 +39,11 @@ specifiers:
 dependencies:
   '@nestjs/common': 8.2.3_ad16f1f28877c5242670873e13562245
   '@nestjs/core': 8.2.3_1864eb04cdb557d7ef263925d28b0dee
-  '@nestjs/graphql': 9.1.2_13aa464da945493a4f46a73e9ef74aee
+  '@nestjs/graphql': 9.1.2_8f8642a96f9a8f33e9cc59fc93c50558
   '@nestjs/platform-express': 8.2.3_4e195730d90113ce1578bd999274c7a8
   '@nestjs/platform-fastify': 8.2.3_4e195730d90113ce1578bd999274c7a8
   '@prisma/client': 3.6.0_prisma@3.6.0
+  apollo-server-core: 3.5.0_graphql@15.8.0
   apollo-server-fastify: 3.5.0_graphql@15.8.0
   graphql: 15.8.0
   reflect-metadata: 0.1.13
@@ -972,7 +974,7 @@ packages:
       uuid: 8.3.2
     dev: false
 
-  /@nestjs/graphql/9.1.2_13aa464da945493a4f46a73e9ef74aee:
+  /@nestjs/graphql/9.1.2_8f8642a96f9a8f33e9cc59fc93c50558:
     resolution: {integrity: sha512-ncxmkKmrswnHJ+jLgc6tbkRET6HAyC3gK6WKt1CdPLjvMnXVpFVpyQMFSenNXxAndInw9IgaiSyiJFdRYZVD/w==}
     peerDependencies:
       '@apollo/federation': ^0.26.0 || ^0.27.0 || ^0.29.0 || ^0.33.0
@@ -1008,6 +1010,7 @@ packages:
       '@nestjs/common': 8.2.3_ad16f1f28877c5242670873e13562245
       '@nestjs/core': 8.2.3_1864eb04cdb557d7ef263925d28b0dee
       '@nestjs/mapped-types': 1.0.0_051e4ec914be5e31382127959d591c92
+      apollo-server-core: 3.5.0_graphql@15.8.0
       apollo-server-fastify: 3.5.0_graphql@15.8.0
       chokidar: 3.5.2
       fast-glob: 3.2.7
