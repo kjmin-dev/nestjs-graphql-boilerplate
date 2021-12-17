@@ -8,7 +8,7 @@ import {
   Args,
   Mutation,
 } from '@nestjs/graphql';
-import { PrismaService } from 'src/services/prisma.service';
+import { PrismaService } from '../../services/prisma.service';
 import {
   TodoList,
   TodoListCreateInput,
